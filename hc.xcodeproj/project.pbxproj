@@ -42,6 +42,7 @@
 		1A492946100B56800052D21F /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49293B100B56800052D21F /* NSError+Error.m */; };
 		1A492947100B56800052D21F /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49293E100B56800052D21F /* ObjectiveResourceConfig.m */; };
 		1A49296C100B58350052D21F /* ViewControllerConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49296B100B58350052D21F /* ViewControllerConnectionManager.m */; };
+		1A492B0E100B7CBE0052D21F /* AppPropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A492B0D100B7CBE0052D21F /* AppPropertyCell.xib */; };
 		1D3623260D0F684500981E51 /* hcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* hcAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -132,6 +133,7 @@
 		1A49293E100B56800052D21F /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		1A49296A100B58350052D21F /* ViewControllerConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerConnectionManager.h; sourceTree = "<group>"; };
 		1A49296B100B58350052D21F /* ViewControllerConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerConnectionManager.m; sourceTree = "<group>"; };
+		1A492B0D100B7CBE0052D21F /* AppPropertyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppPropertyCell.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* hcAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hcAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* hcAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hcAppDelegate.m; sourceTree = "<group>"; };
@@ -164,8 +166,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1A49292A100B56800052D21F /* ObjectiveResource */,
-				1A4928D6100B56660052D21F /* ObjectiveSupport */,
 				1A4927FD100AFA2F0052D21F /* AppViewController.h */,
 				1A4927FE100AFA2F0052D21F /* AppViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
@@ -196,7 +196,7 @@
 				1A4928ED100B56660052D21F /* Serialization */,
 			);
 			name = ObjectiveSupport;
-			path = lib;
+			path = Classes/lib;
 			sourceTree = "<group>";
 		};
 		1A4928D7100B56660052D21F /* Core */ = {
@@ -309,6 +309,7 @@
 				1A49292C100B56800052D21F /* NSObject+ObjectiveResource.m */,
 			);
 			name = ObjectiveResource;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		1A49292D100B56800052D21F /* Connection */ = {
@@ -335,6 +336,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1A4928D6100B56660052D21F /* ObjectiveSupport */,
+				1A49292A100B56800052D21F /* ObjectiveResource */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -359,6 +362,7 @@
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* hc-Info.plist */,
+				1A492B0D100B7CBE0052D21F /* AppPropertyCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				1A492B0E100B7CBE0052D21F /* AppPropertyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

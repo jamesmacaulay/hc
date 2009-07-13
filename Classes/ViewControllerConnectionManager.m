@@ -30,7 +30,7 @@
 }
 
 -(void) handleError:(NSError **)error {
-    if (*error != nil) {
+    if (error) {
         NSLog([*error description]);
     }
 }

@@ -10,6 +10,6 @@
 
 
 @implementation App
-@synthesize name;
+@synthesize name, domainName, dynos, repoSize, slugSize, owner, createdAt;
 
 @end

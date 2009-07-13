@@ -8,6 +8,10 @@
 
 #import "AppViewController.h"
 #import "App.h"
+#import "ObjectiveSupport.h"
+
+#define LABEL_TAG 1 
+#define VALUE_TAG 2
 
 
 @implementation AppViewController
@@ -82,24 +86,80 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 6;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
+    if (indexPath.section == 0) {
+        return [self tableView:tableView appPropertyCellForRow:indexPath.row];
+    } else {
+        return [self tableView:tableView appPropertyCellForRow:indexPath.row];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView appPropertyCellForRow:(int)row {
+    static NSString *CellIdentifier = @"AppPropertyCell";
+    UILabel *propertyLabel, *valueLabel;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        UIViewController *c = [[UIViewController alloc] initWithNibName:@"AppPropertyCell" bundle:nil];        
+        cell = (UITableViewCell *)c.view;
     }
+    propertyLabel = (UILabel *)[cell.contentView viewWithTag:LABEL_TAG]; 
+    valueLabel = (UILabel *)[cell.contentView viewWithTag:VALUE_TAG]; 
     
     // Set up the cell...
-    cell.textLabel.text = @"foo";
+    switch (row) {
+        case 0:
+            propertyLabel.text = @"domain";
+            valueLabel.text = app.domainName;
+            break;
+        case 1:
+            propertyLabel.text = @"owner";
+            valueLabel.text = app.owner;
+            break;
+        case 2:
+            propertyLabel.text = @"dynos";
+            valueLabel.text = [app.dynos description];
+            break;
+        case 3:
+            propertyLabel.text = @"created";
+            valueLabel.text = [app.createdAt description];
+            break;
+        case 4:
+            propertyLabel.text = @"repo";
+            
+            valueLabel.text = [self stringFromFileSize:[app.repoSize integerValue]];
+            break;
+        case 5:
+            propertyLabel.text = @"slug";
+            valueLabel.text = [self stringFromFileSize:[app.slugSize integerValue]];
+            break;
+        default:
+            break;
+    }
 	
-    return cell;
+    return cell;    
+}
+
+- (NSString *)stringFromFileSize:(int)theSize {
+	float floatSize = theSize;
+	if (theSize<1023)
+		return([NSString stringWithFormat:@"%i bytes",theSize]);
+	floatSize = floatSize / 1024;
+	if (floatSize<1023)
+		return([NSString stringWithFormat:@"%1.1f KB",floatSize]);
+	floatSize = floatSize / 1024;
+	if (floatSize<1023)
+		return([NSString stringWithFormat:@"%1.1f MB",floatSize]);
+	floatSize = floatSize / 1024;
+    
+	// Add as many as you like
+    
+	return([NSString stringWithFormat:@"%1.1f GB",floatSize]);
 }
 
 

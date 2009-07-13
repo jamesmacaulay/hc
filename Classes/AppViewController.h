@@ -13,7 +13,9 @@
 @interface AppViewController : UITableViewController {
     App *app;
 }
-
 @property (nonatomic, retain) App *app;
+
+- (UITableViewCell *)tableView:(UITableView *)tableView appPropertyCellForRow:(int)row;
+- (NSString *)stringFromFileSize:(int)theSize;
 
 @end

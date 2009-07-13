@@ -12,6 +12,8 @@
 #import "AppViewController.h"
 #import "ViewControllerConnectionManager.h"
 
+#define OFFLINE NO
+
 
 @implementation RootViewController
 @synthesize apps, connection;
@@ -22,7 +24,15 @@
     self.title = @"apps";
     connection = [[ViewControllerConnectionManager alloc] initWithDelegate:self];    
     
-    [connection run:@selector(loadApps) then:@selector(appsDidLoad)];
+    if (OFFLINE) {
+        App *app = [[App alloc] init];
+        app.name = @"gish";
+        self.apps = [NSArray arrayWithObject:app];
+        [app release];
+    } else {
+        [connection run:@selector(loadApps) then:@selector(appsDidLoad)];
+    }
+    
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -97,7 +107,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"AppCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -118,8 +128,7 @@
     AppViewController *appViewController = [[AppViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
     
-    NSLog([apps description]);
-    //appViewController.app = [apps objectAtIndex:[indexPath indexAtPosition:1]];
+    appViewController.app = [apps objectAtIndex:[indexPath indexAtPosition:1]];
     
 	[self.navigationController pushViewController:appViewController animated:YES];
 	[appViewController release];
