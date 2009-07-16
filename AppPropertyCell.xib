@@ -44,21 +44,26 @@
 							<object class="IBUILabel" id="628554712">
 								<reference key="NSNextResponder" ref="1054923225"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 10}, {63, 21}}</string>
+								<string key="NSFrame">{{20, 10}, {57, 21}}</string>
 								<reference key="NSSuperview" ref="1054923225"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUITag">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">property</string>
-								<object class="NSFont" key="IBUIFont">
-									<string key="NSName">Helvetica</string>
+								<object class="NSFont" key="IBUIFont" id="535012732">
+									<string key="NSName">Helvetica-Bold</string>
 									<double key="NSSize">1.400000e+01</double>
 									<int key="NSfFlags">16</int>
 								</object>
 								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MCAwLjUwMTk2MDgxIDEAA</bytes>
+									<int key="NSColorSpace">6</int>
+									<string key="NSCatalogName">System</string>
+									<string key="NSColorName">alternateSelectedControlColor</string>
+									<object class="NSColor" key="NSColor">
+										<int key="NSColorSpace">1</int>
+										<bytes key="NSRGB">MCAwIDEAA</bytes>
+									</object>
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
@@ -68,13 +73,14 @@
 							<object class="IBUILabel" id="885127592">
 								<reference key="NSNextResponder" ref="1054923225"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{96, 10}, {204, 21}}</string>
+								<string key="NSFrame">{{83, 10}, {211, 21}}</string>
 								<reference key="NSSuperview" ref="1054923225"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUITag">2</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">value</string>
+								<reference key="IBUIFont" ref="535012732"/>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -181,7 +187,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIViewController</string>
 					<string>UIResponder</string>
-					<string>{{147, 688}, {320, 44}}</string>
+					<string>{{113, 688}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -256,6 +262,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">UITableViewCell</string>
+					<string key="superclassName">UIView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>

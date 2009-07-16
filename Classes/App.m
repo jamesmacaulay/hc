@@ -12,4 +12,13 @@
 @implementation App
 @synthesize name, domainName, dynos, repoSize, slugSize, owner, createdAt;
 
+
+- (NSString *) domainName {
+    if (domainName && domainName.length > 0) {
+        return domainName;
+    } else {
+        return [NSString stringWithFormat:@"%@.heroku.com",name];
+    }
+}
+
 @end
