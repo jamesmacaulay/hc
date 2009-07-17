@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = app.name;
+    self.tableView.allowsSelection = NO;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -127,7 +128,10 @@
             break;
         case 3:
             propertyLabel.text = @"created";
-            valueLabel.text = [app.createdAt description];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"MMMM d, YYYY"];
+            valueLabel.text = [formatter stringFromDate:app.createdAt];
+            [formatter release];
             break;
         case 4:
             propertyLabel.text = @"repo";
